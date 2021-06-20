@@ -10,7 +10,7 @@ message VideoData {
   bytes content = 2;
 }
 
-message JobData {
+message Job {
   message Customer {
     string first_name = 1;
     string last_name = 2;

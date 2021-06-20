@@ -3,6 +3,8 @@ package Redhvid;
 
 option csharp_namespace = "Redhvid";
 
+import "google/protobuf/empty.proto";
+
 message VideoData {
   int32 job_id = 1;
   bytes content = 2;
@@ -19,10 +21,18 @@ message JobData {
   Customer customer = 3;
 }
 
-service JobService {
-  rpc GetNewJob() returns (int32);
-  rpc GetJobs() returns (repeated JobData);
-  rpc DeleteJob(int32) returns (JobData);
+message Jobs {
+  repeated Job jobs = 1;
+}
+
+message JobIdentifier {
+  int32 job_id = 1;
+}
+
+service JobSpool {
+  rpc GetNewJob(google.protobuf.Empty) returns (JobIdentifier);
+  rpc GetJobs(google.protobuf.Empty) returns (Jobs);
+  rpc DeleteJob(JobIdentifier) returns (Job);
   rpc Upload(VideoData) returns (VideoData);
-  rpc Flush(JobData) returns (JobData);
+  rpc Flush(Job) returns (Job);
 }

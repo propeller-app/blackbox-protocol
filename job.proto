@@ -18,7 +18,7 @@ message Job {
   }
   int32 job_id = 1;
   string machine_id = 2;
-  int32 expires = 3;
+  int64 expires = 3;
   Customer customer = 4;
 }
 

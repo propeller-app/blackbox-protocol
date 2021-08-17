@@ -34,6 +34,7 @@ service JobSpool {
   rpc GetNewJob(google.protobuf.Empty) returns (JobIdentifier);
   rpc GetJobs(google.protobuf.Empty) returns (Jobs);
   rpc DeleteJob(JobIdentifier) returns (Job);
+  rpc Heartbeat(JobIdentifier) returns (JobIdentifier);
   rpc Upload(VideoData) returns (google.protobuf.Empty);
   rpc Flush(Job) returns (Job);
 }

@@ -1,7 +1,7 @@
 syntax="proto3";
 package Redhvid;
 
-option csharp_namespace = "Redhvid.Rpc";
+option csharp_namespace = "Blackbox.Client.Rpc";
 
 import "google/protobuf/empty.proto";
 

@@ -1,5 +1,5 @@
 syntax="proto3";
-package Redhvid;
+package Blackbox;
 
 option csharp_namespace = "Blackbox.Client.Rpc";
 
